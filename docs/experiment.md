@@ -26,10 +26,14 @@ const dividend = await FileAttachment("data/2020-dividend.csv").csv({ typed: tru
 ```
 
 ```js
-const mappedDividend = dividend.map((d) => ({
-    ...d,
-   amountNokAtExDate: round(nokToUsdAtDate(d.exDate) * d.amount)    
-})).sort((a, b) => d3.ascending(a.exDate, b.exDate));
+const mappedDividend = dividend.map((d) => ({ ...d, amountNokAtExDate: round(nokToUsdAtDate(d.exDate) * d.amount) }))
+    .sort((a, b) => d3.ascending(a.exDate, b.exDate))
+    .reduce((a, d, i) => ([...a, {
+        ...d, 
+        cumulativeAmount: i == 0  ? d.amount : a[i-1].cumulativeAmount + d.amount,
+        cumulativeAmountNok: i == 0  ? d.amountNokAtExDate : round(a[i-1].cumulativeAmountNok + d.amountNokAtExDate)
+    }]), []);
+;
 ```
 
 ```js
