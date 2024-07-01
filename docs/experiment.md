@@ -50,11 +50,11 @@ display(
         title: "Utbytte 🚀",
         subtitle: "Kronekurs basert på ex-date.",
         width,
-        y: {grid: true, label: "NOK"},
+        y: {grid: true, label: "NOK", tickFormat: (d, i, _) => (d +" kr")},
         x: {label: "Pay date"},
         marks: [
             Plot.ruleY([0]),
-            Plot.lineY(mappedDividend, {x: "payDate", y: "cumulativeAmountNok", strokeWidth: 2, curve: "step-after", tip: true}),
+            Plot.lineY(mappedDividend, {x: "payDate", y: "cumulativeAmountNok", strokeWidth: 2, stroke: "black", curve: "step-after", tip: true}),
             Plot.rectY(mappedDividend, Plot.binX({y: "sum"}, {x: "payDate", y: "amountNokAtExDate", interval: "month", tip: true})),
         ]
     }))
