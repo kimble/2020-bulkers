@@ -27,7 +27,9 @@ I bunnen av grafen skriver de at de tjener en 39% premium over [Baltic 5TC](http
 Scrubbere lar de som leier skipene brenne olje med høyere andel svovel. Dette drivstoffet er billigere og om jeg har 
 forstått det rett så deler 2020 Bulkers og de som leier skipene differansen.  
 
-I [grafen de publiserte etter salget](https://x.com/2Bulkers/status/1777660327372484831) av de to skipene tar de utgangspunkt i en scrubber-fordel på 145 USD per måned.
+I [grafen de publiserte etter salget](https://x.com/2Bulkers/status/1777660327372484831) av de to skipene tar de utgangspunkt i en scrubber-fordel på 145 USD mt.
+
+**Todo:** Hva mener de med "mt"? Metric tonn drivstoff? Hvor mye drivstoff bruker et sånt skip? 
 
 ## Exit strategi 
 
