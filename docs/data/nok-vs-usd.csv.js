@@ -1,4 +1,4 @@
-import {csvFormat, tsvParse, dsvFormat} from "d3-dsv";
+import {csvFormat, dsvFormat} from "d3-dsv";
 
 async function text(url) {
     const response = await fetch(url);
@@ -10,7 +10,6 @@ async function text(url) {
 // https://app.norges-bank.no/query/index.html#/no/currency
 const uri = "https://data.norges-bank.no/api/data/EXR/B.USD.NOK.SP?apisrc=qb&format=csv&startPeriod=2020-01-01&endPeriod=2024-07-01&locale=no&bom=include";
 const raw = await text(uri);
-
 const parser = dsvFormat(";")
 
 const parsed = parser.parse(raw, (d) => {
