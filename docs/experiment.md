@@ -29,7 +29,7 @@ const dividend = await FileAttachment("data/2020-dividend.csv").csv({ typed: tru
 const mappedDividend = dividend.map((d) => ({
     ...d,
    amountNokAtExDate: round(nokToUsdAtDate(d.exDate) * d.amount)    
-}));
+})).sort((a, b) => d3.ascending(a.exDate, b.exDate));
 ```
 
 ```js
