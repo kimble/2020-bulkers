@@ -39,3 +39,25 @@ const mappedDividend = dividend.map((d) => ({ ...d, amountNokAtExDate: round(nok
 ```js
 display(mappedDividend);
 ```
+
+
+
+
+```js
+
+display(
+    resize((width) => Plot.plot({
+        title: "Utbytte 🚀",
+        subtitle: "Kronekurs basert på ex-date.",
+        width,
+        y: {grid: true, label: "NOK"},
+        x: {label: "Pay date"},
+        marks: [
+            Plot.ruleY([0]),
+            Plot.lineY(mappedDividend, {x: "payDate", y: "cumulativeAmountNok", strokeWidth: 2, curve: "step-after", tip: true}),
+            Plot.rectY(mappedDividend, Plot.binX({y: "sum"}, {x: "payDate", y: "amountNokAtExDate", interval: "month", tip: true})),
+        ]
+    }))
+);
+
+```
