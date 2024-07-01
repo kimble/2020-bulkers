@@ -16,11 +16,14 @@ skip bygget i samme periode. En annen ting som er gøy er at de betaler ut hele 
 Siden april-mai-ish 2024 har alle har gått på kontrakter linket til spot-priser der de i tillegg tjener en premium fordi
 skipene er litt større enn en standard Newcastlemax + scrubber fordel. 
 
+**Todo:** Finn ut hvor stor denne "premiumen" er. Mener at jeg har hørt/lest 10% et sted?
+
 ## Scrubbere
 
 Scrubbere lar de som leier skipene brenne olje med høyere andel svovel. Dette drivstoffet er billigere og om jeg har 
 forstått det rett så deler 2020 Bulkers og de som leier skipene differansen.  
 
+**Todo:** Se om det går an å finne ut hvor mye det er snakk om og hvor mye dette varierer. 
 
 ## Exit strategi 
 
