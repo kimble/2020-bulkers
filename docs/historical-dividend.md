@@ -40,7 +40,7 @@ const mappedDividend = dividend.map((d) => ({ ...d, amountNokAtExDate: round(nok
 
 
 <div class="grid grid-cols-2">
-  <div class="card">
+  <div>
 
 Alle utbytteutbetalinger
 -------------------------
@@ -48,7 +48,7 @@ Alle utbytteutbetalinger
 ```js
 function sparkbar(currency, max) {
     return (x) => htl.html`<div style="
-    background: #eee;
+    background: #f5f5f5;
     color: black;
     font: 10px/1.6 var(--sans-serif);
     width: ${100 * x / max}%;
@@ -81,12 +81,41 @@ display(Inputs.table(
 ```
 
 </div>
-<div class="card">
+<div>
+
+
+```js
+display(
+    resize((width) => Plot.plot({
+        title: "Utbyttegraf 🚀",
+        subtitle: "Kronekurs basert på ex-date.",
+        width,
+        y: {grid: true, label: "NOK", tickFormat: (d, i, _) => (d +" kr")},
+        x: {label: "Pay date"},
+        marks: [
+            Plot.ruleY([0]),
+            Plot.lineY(mappedDividend, {x: "payDate", y: "cumulativeAmountNok", strokeWidth: 2, stroke: "black", curve: "step-after", tip: true}),
+            Plot.rectY(mappedDividend, Plot.binX({y: "sum"}, {x: "payDate", y: "amountNokAtExDate", interval: "month", tip: true})),
+        ]
+    }))
+);
+```
+
+</div>
+</div>
+
+
+<div class="grid grid-cols-2">
+<div>
 
 Utbytte per år
 ----------------
 
+Legg merke til at utbyttet i 2021 var nesten 4x det i 2023 selv uten salg av et eneste skip. Det sier en del om hvor
+hvor mye mer de tjener i et godt marked. 
 
+En veldig stor andel av utbyttet i 2024 kommer av at [de solgte de to skipene Bulk Shanghai og Bulk Seoul for 127.5 mUSD](https://news.cision.com/2020-bulkers-limited/r/2020-bulkers-ltd---2020----sale-of-bulk-shanghai-and-bulk-seoul,c3926557) i februar.
+Pengene fra salget gikk til gjeld og lavere break even + et heftig utbytte.
 
 ```js
 const groupedByYear = d3.rollup(mappedDividend, (v) => round(d3.sum(v, d => d.amountNokAtExDate)), (d) => d.payDate.getFullYear());
@@ -113,23 +142,25 @@ display(
 ```
 
 </div>
-</div>
-
+<div>
 
 ```js
 display(
     resize((width) => Plot.plot({
-        title: "Utbyttegraf 🚀",
+        title: "Utbytte per år 🚀",
         subtitle: "Kronekurs basert på ex-date.",
         width,
         y: {grid: true, label: "NOK", tickFormat: (d, i, _) => (d +" kr")},
         x: {label: "Pay date"},
         marks: [
             Plot.ruleY([0]),
-            Plot.lineY(mappedDividend, {x: "payDate", y: "cumulativeAmountNok", strokeWidth: 2, stroke: "black", curve: "step-after", tip: true}),
-            Plot.rectY(mappedDividend, Plot.binX({y: "sum"}, {x: "payDate", y: "amountNokAtExDate", interval: "month", tip: true})),
+            Plot.rectY(mappedDividend, Plot.binX({y: "sum"}, {x: "payDate", y: "amountNokAtExDate", interval: "year", tip: true})),
         ]
     }))
 );
 ```
+
+
+</div>
+</div>
 
