@@ -14,16 +14,20 @@ skip bygget i samme periode. En annen ting som er gøy er at de betaler ut hele 
 ## Spot
 
 Siden april-mai-ish 2024 har alle har gått på kontrakter linket til spot-priser der de i tillegg tjener en premium fordi
-skipene er litt større enn en standard Newcastlemax + scrubber fordel. 
+skipene er litt større enn en standard Capesize + scrubber fordel. 
 
-**Todo:** Finn ut hvor stor denne "premiumen" er. Mener at jeg har hørt/lest 10% et sted?
+De har en veldig bra [Twitter-konto](https://x.com/2Bulkers) hvor de poster spot-rater for dagen, mtd og ytd sammen med en liten kommentar.
+På samme konto har de også lagt ut en [graf over rater vs. fcf](https://x.com/2Bulkers/status/1777660327372484831).
+Basert på denne informasjonen er det mulig å treffe ganske godt på hva utbyttet for måneden blir. 
+
+I bunnen av grafen skriver de at de tjener en 39% premium over [Baltic 5TC](https://www.investing.com/indices/baltic-capesize).
 
 ## Scrubbere
 
 Scrubbere lar de som leier skipene brenne olje med høyere andel svovel. Dette drivstoffet er billigere og om jeg har 
 forstått det rett så deler 2020 Bulkers og de som leier skipene differansen.  
 
-**Todo:** Se om det går an å finne ut hvor mye det er snakk om og hvor mye dette varierer. 
+I [grafen de publiserte etter salget](https://x.com/2Bulkers/status/1777660327372484831) av de to skipene tar de utgangspunkt i en scrubber-fordel på 145 USD per måned.
 
 ## Exit strategi 
 
