@@ -51,7 +51,7 @@ Sum: ${operationalDaysTotal}
 ## Scrubber spread
 
 Ta en titt på [nyhetssiden](https://2020bulkers.com/investor-relations/) for forrige måneds "commercial update" for en ide
-om hva slags premie de får for scrubbere for tiden.
+om hva slags premie de får for scrubbere for tiden. Alternativt teste [kalkulatoren](/scrubber-calculator).
 
 ```js
 const scrubberSpreadPerDayUsd = view(Inputs.range([0, 5000], {step: 1, value: 2400, label: "Per day per ship (USD)"}));

@@ -20,9 +20,10 @@ Det er en del ting som gjør det veldig vanskelig å regne på dette.
 
 1. Prisene på drivstoff varierer fra sted til sted i verden
 2. Vi aner ikke når, hvor eller hvor mye drivstoff hver skip fyller
-3. Spread varierer ganske mye fra måned til måned.
+3. Spread varierer ganske mye fra måned til måned
+4. Drivstoffbehovet avhenger av fart, antall dager til kais, antall dager med last...
 
-## Forutsetninger
+## Input
 
 ```js
 const numberOfShips = view(Inputs.range([1, facts.numberOfShips+2], {step: 1, value: facts.numberOfShips, label: "Antall skip"}));
@@ -46,7 +47,7 @@ const scrubberSavingsPerShip = (metricTonnsPerDayPerShip * spreadPerTonnUsd) * (
 const scrubberSavingsFleet = scrubberSavingsPerShip * numberOfShips; 
 ```
 
-## Resultat
+## Output
 
 Her er 2020 Bulkers sin andel av besparelsen per dag. 
 
