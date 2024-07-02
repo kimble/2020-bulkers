@@ -24,12 +24,14 @@ I bunnen av grafen skriver de at de tjener en 39% premium over [Baltic 5TC](http
 
 ## Scrubbere
 
-Scrubbere lar de som leier skipene brenne olje med høyere andel svovel. Dette drivstoffet er billigere og om jeg har 
+Scrubbere lar de som leier skipene brenne olje med høyere andel svovel (HSFO vs VLSFO). Dette drivstoffet er billigere og om jeg har 
 forstått det rett så deler 2020 Bulkers og de som leier skipene differansen.  
 
 I [grafen de publiserte etter salget](https://x.com/2Bulkers/status/1777660327372484831) av de to skipene tar de utgangspunkt i en scrubber-fordel på 145 USD mt.
 
-**Todo:** Hva mener de med "mt"? Metric tonn drivstoff? Hvor mye drivstoff bruker et sånt skip? 
+På [side 11 i en relativt gammel presenstasjon](https://2020bulkers.com/content/uploads/2020/08/Company-presentation-January-7-2020.pdf) skriver de at de får 75% av scrubber fordelen.
+
+**Todo:** Hva mener de med "mt"? Metric tonn drivstoff? Hvor mye drivstoff bruker et sånt skip? [Rapport](https://marineaffairs.ca/reports/daily-fuel-consumption-emissions-bulk-carriers.pdf).
 
 ## Exit strategi 
 
@@ -44,4 +46,10 @@ Dette gir jo selskapet en veldig begrenset levetid og jeg lurer på hva selskape
 1. De kan seile skipene ut levetiden sin, betale ut så mye de kan i form av utbytte og selge de som [skrapmetall](/scrap). Hva gjør de med gjelden de ikke betaler avdrag på i dag? Antar at det ikke er noen garanti for skrapverdien overstiger gjelden?  
 2. De kan vente til et gunstig tidspunkt å selge alle skipene på bruktmarkedet (de har allerede solgt 2/8 skip).
 3. De kan slå selskapet sammen med et annet. Det er jo naturlig nok mange som spekulrer i om de vil bli slått sammen med [Himalaya](https://himalaya-shipping.com/). Med samme eiere og ansatte er det lett å tenke at det ligger i kortene... Hva vil det si for de som eier aksjer i hvert av disse selskapene i dag?
-4. De kan selge hele selskapet til et annet selskap. 
+4. De kan selge hele selskapet til et annet selskap.
+
+
+
+## Gode kilder
+
+1. [Bacheloroppgave](https://uis.brage.unit.no/uis-xmlui/bitstream/handle/11250/3079235/no.uis%3ainspera%3a145995936%3a69581390.pdf?sequence=1&isAllowed=y)

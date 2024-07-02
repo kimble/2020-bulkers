@@ -66,14 +66,17 @@ display(Inputs.table(
             columns: [
                 "payDate",
                 "exDate",
+                "amount",
                 "amountNokAtExDate"
             ],
             header: {
                 payDate: "Pay date",
                 exDate: "Ex date",
+                amount: "USD",
                 amountNokAtExDate: "NOK",
             },
             format: {
+                amount: sparkbar("USD", d3.max(mappedDividend, d => d.amount)),
                 amountNokAtExDate: sparkbar("NOK", d3.max(mappedDividend, d => d.amountNokAtExDate))
             }
         }
