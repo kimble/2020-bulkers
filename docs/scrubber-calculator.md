@@ -9,8 +9,8 @@ const facts = await FileAttachment("data/facts.json").json();
 
 # Scrubber kalkulator 
 
-Skipene til 2020 har scrubbere som gjør at de kan brenne billigere olje med høyere innhold av svovel enn skip uten
-scrubbere. Kontraktene 2020 inngår gir de en andel av besparelsen. 
+Skipene til 2020 har scrubbere som gjør at de kan brenne [billigere](https://integr8fuels.com/stable-prices-at-the-moment-but-wider-vlsfo-hsfo-spread-going-forward/) 
+olje med høyere innhold av svovel enn skip uten scrubbere. Kontraktene 2020 inngår gir de en andel av besparelsen. 
 
 Skulle ønske at man kunne linke direkte til innlegg på [Nordnet sitt forum](https://www.nordnet.no/market/stocks/16786171-2020-bulkers) for
 spesielt [Eriksens Oppsparte](https://www.nordnet.no/aksjeforum/medlem/eriksens-oppsparte) har en del innlegg hvor han forklarer hvordan
@@ -54,3 +54,4 @@ Her er 2020 Bulkers sin andel av besparelsen per dag.
 **Per skip:**<br/>${priceFormat(scrubberSavingsPerShip)} USD.
 
 **Hele flåten:**<br/>${priceFormat(scrubberSavingsFleet)} USD.
+
