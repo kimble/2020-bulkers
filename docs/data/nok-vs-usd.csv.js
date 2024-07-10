@@ -8,7 +8,7 @@ async function text(url) {
 
 // Norges Bank has a lovely API for this!
 // https://app.norges-bank.no/query/index.html#/no/currency
-const uri = "https://data.norges-bank.no/api/data/EXR/B.USD.NOK.SP?apisrc=qb&format=csv&startPeriod=2019-01-01&endPeriod=2024-07-01&locale=no&bom=include";
+const uri = "https://data.norges-bank.no/api/data/EXR/B.USD.NOK.SP?apisrc=qb&format=csv&startPeriod=2019-01-01&endPeriod=2025-07-01&locale=no&bom=include";
 const raw = await text(uri);
 const parser = dsvFormat(";")
 

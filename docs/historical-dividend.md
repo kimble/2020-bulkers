@@ -7,19 +7,27 @@ title: Historisk utbytte
 Data hentes fra [divvydiary.com](https://divvydiary.com/en/2020-bulkers-stock-BMG9156K1018).
 
 ```js
-const nokusd = await FileAttachment("data/nok-vs-usd.csv").csv({ typed: true });
-const nokUsdByDate = nokusd.reduce((a, v) => ({ ...a, [v.date]: v.value}), {});
+const nokusd = await FileAttachment("data/nok-vs-usd.csv").csv({typed: true});
+const nokUsdByDate = nokusd.reduce((a, v) => ({...a, [v.date]: v.value}), {});
 
 const round = (n) => Math.round(n * 100) / 100;
 
 const nokToUsdAtDate = (date) => {
     const value = nokUsdByDate[date];
-    
+
     if (value === undefined) {
-        throw("Missing usd/nok at " + date);
+        const today = new Date()
+
+        if (date < today) {
+            throw ("Missing usd/nok at " + date);
+        } else {
+            const latest = nokusd[nokusd.length - 1];
+            console.warn("Using latest exchange rate for " + date + " => ", latest);
+            return latest.value;
+        }
+    } else {
+        return value;
     }
-    
-    return value;
 };
 ```
 
