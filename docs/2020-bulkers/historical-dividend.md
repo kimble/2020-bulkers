@@ -6,6 +6,12 @@ title: Historisk utbytte
 
 Data hentes fra [divvydiary.com](https://divvydiary.com/en/2020-bulkers-stock-BMG9156K1018).
 
+Legg merke til at utbyttet i 2021 var nesten 4x det i 2023 selv uten salg av et eneste skip. Det sier en del om hvor
+hvor mye mer de tjener i et godt marked.
+
+En veldig stor andel av utbyttet i 2024 kommer av at [de solgte de to skipene Bulk Shanghai og Bulk Seoul for 127.5 mUSD](https://news.cision.com/2020-bulkers-limited/r/2020-bulkers-ltd---2020----sale-of-bulk-shanghai-and-bulk-seoul,c3926557) i februar.
+Pengene fra salget gikk til gjeld og lavere break even + et heftig utbytte.
+
 ```js
 const nokusd = await FileAttachment("../data/nok-vs-usd.csv").csv({typed: true});
 const nokUsdByDate = nokusd.reduce((a, v) => ({...a, [v.date]: v.value}), {});
@@ -95,38 +101,10 @@ display(Inputs.table(
 <div>
 
 
-```js
-display(
-    resize((width) => Plot.plot({
-        title: "Utbyttegraf 🚀",
-        subtitle: "Kronekurs basert på ex-date.",
-        width,
-        y: {grid: true, label: "NOK", tickFormat: (d, i, _) => (d +" kr")},
-        x: {label: "Pay date"},
-        marks: [
-            Plot.ruleY([0]),
-            Plot.lineY(mappedDividend, {x: "payDate", y: "cumulativeAmountNok", strokeWidth: 2, stroke: "black", curve: "step-after", tip: true}),
-            Plot.rectY(mappedDividend, Plot.binX({y: "sum"}, {x: "payDate", y: "amountNokAtExDate", interval: "month", tip: true})),
-        ]
-    }))
-);
-```
-
-</div>
-</div>
-
-
-<div class="grid grid-cols-2">
-<div>
-
 Utbytte per år
 ----------------
 
-Legg merke til at utbyttet i 2021 var nesten 4x det i 2023 selv uten salg av et eneste skip. Det sier en del om hvor
-hvor mye mer de tjener i et godt marked. 
 
-En veldig stor andel av utbyttet i 2024 kommer av at [de solgte de to skipene Bulk Shanghai og Bulk Seoul for 127.5 mUSD](https://news.cision.com/2020-bulkers-limited/r/2020-bulkers-ltd---2020----sale-of-bulk-shanghai-and-bulk-seoul,c3926557) i februar.
-Pengene fra salget gikk til gjeld og lavere break even + et heftig utbytte.
 
 ```js
 const groupedByYear = d3.rollup(mappedDividend, (v) => round(d3.sum(v, d => d.amountNokAtExDate)), (d) => d.payDate.getFullYear());
@@ -152,8 +130,30 @@ display(
 );
 ```
 
+
 </div>
-<div>
+</div>
+
+
+
+```js
+display(
+    resize((width) => Plot.plot({
+        title: "Utbyttegraf 🚀",
+        subtitle: "Kronekurs basert på ex-date.",
+        width,
+        y: {grid: true, label: "NOK", tickFormat: (d, i, _) => (d +" kr")},
+        x: {label: "Pay date"},
+        marks: [
+            Plot.ruleY([0]),
+            Plot.lineY(mappedDividend, {x: "payDate", y: "cumulativeAmountNok", strokeWidth: 2, stroke: "black", curve: "step-after", tip: true}),
+            Plot.rectY(mappedDividend, Plot.binX({y: "sum"}, {x: "payDate", y: "amountNokAtExDate", interval: "month", tip: true})),
+        ]
+    }))
+);
+```
+
+
 
 ```js
 display(
@@ -172,6 +172,4 @@ display(
 ```
 
 
-</div>
-</div>
 
