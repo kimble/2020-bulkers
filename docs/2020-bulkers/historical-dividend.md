@@ -136,29 +136,33 @@ display(
 
 
 
+
+
+Utbytte per måned
+----------------
+
 ```js
 display(
     resize((width) => Plot.plot({
-        title: "Utbyttegraf 🚀",
         subtitle: "Kronekurs basert på ex-date.",
         width,
         y: {grid: true, label: "NOK", tickFormat: (d, i, _) => (d +" kr")},
         x: {label: "Pay date"},
         marks: [
             Plot.ruleY([0]),
-            Plot.lineY(mappedDividend, {x: "payDate", y: "cumulativeAmountNok", strokeWidth: 2, stroke: "black", curve: "step-after", tip: true}),
-            Plot.rectY(mappedDividend, Plot.binX({y: "sum"}, {x: "payDate", y: "amountNokAtExDate", interval: "month", tip: true})),
+            Plot.rectY(mappedDividend, Plot.binX({y: "sum"}, {x: "exDate", y: "amountNokAtExDate", interval: "month", tip: true})),
         ]
     }))
 );
 ```
 
 
+Utbytte per år
+--------------
 
 ```js
 display(
     resize((width) => Plot.plot({
-        title: "Utbytte per år 🚀",
         subtitle: "Kronekurs basert på ex-date.",
         width,
         y: {grid: true, label: "NOK", tickFormat: (d, i, _) => (d +" kr")},
@@ -172,4 +176,22 @@ display(
 ```
 
 
+
+Akkumulert utbytte
+----------------
+
+```js
+display(
+    resize((width) => Plot.plot({
+        subtitle: "Kronekurs basert på ex-date.",
+        width,
+        y: {grid: true, label: "NOK", tickFormat: (d, i, _) => (d +" kr")},
+        x: {label: "Pay date"},
+        marks: [
+            Plot.ruleY([0]),
+            Plot.lineY(mappedDividend, {x: "payDate", y: "cumulativeAmountNok", strokeWidth: 2, stroke: "black", curve: "step-after", tip: true})
+        ]
+    }))
+);
+```
 
