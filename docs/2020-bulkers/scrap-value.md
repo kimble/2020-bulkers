@@ -48,13 +48,11 @@ const ldtPerShip = view(Inputs.range([20000, 50000], {step: 1, value: 25000, lab
 ```
 
 
-<div class="grid grid-cols-2">
-  <div>
 
 
 ## Beregnet skrapverdi 
 
-Både per skip og for hele flåten.
+### Per skip
 
 ```js
 const prices = [ 300, 350, 400, 450, 500, 550, 600, 650, 700 ];
@@ -69,20 +67,58 @@ display(
         x: {label: "Scrap price in USD/LDT"},
         marks: [
             Plot.ruleY([0]),
-            Plot.lineY(data, {x: "pricePerLdt", y: "fleetScrapValue", strokeWidth: 2, stroke: "black", tip: true}),
             Plot.lineY(data, {x: "pricePerLdt", y: "perShipScrapValue", strokeWidth: 2, stroke: "black", tip: true}),
         ]
     }))
 );
-
 ```
 
-</div>
-<div>
+### Hele flåten
+
+```js
+const prices = [ 300, 350, 400, 450, 500, 550, 600, 650, 700 ];
+const data = prices.map((p) => ({ pricePerLdt: p, fleetScrapValue: p * numberOfShips * ldtPerShip, perShipScrapValue: p * ldtPerShip }));
+const priceFormat = d3.format(",");
+
+display(
+    resize((width) => Plot.plot({
+        marginLeft: 60,
+        width,
+        y: {grid: true, label: "NOK", tickFormat: (d, i, _) => (priceFormat(Math.round((d * nokPerUsd) / 1000000)) +" mill")},
+        x: {label: "Scrap price in USD/LDT"},
+        marks: [
+            Plot.ruleY([0]),
+            Plot.lineY(data, {x: "pricePerLdt", y: "fleetScrapValue", strokeWidth: 2, stroke: "black", tip: true})
+        ]
+    }))
+);
+```
+
 
 ## Beregnet skrapverdi per aksje
 
-Både per skip og for hele flåten.
+### Per skip
+
+```js
+const prices = [ 300, 350, 400, 450, 500, 550, 600, 650, 700 ];
+const data = prices.map((p) => ({ pricePerLdt: p, fleetScrapValuePerShare: (p * numberOfShips * ldtPerShip) / numberOfShares, shipScrapValuePerShare: (p * ldtPerShip) / numberOfShares }));
+const priceFormat = d3.format(",");
+
+display(
+    resize((width) => Plot.plot({
+        marginLeft: 60,
+        width,
+        y: {grid: true, label: "NOK", tickFormat: (d, i, _) => (priceFormat(Math.round((d * nokPerUsd))) +" kr")},
+        x: {label: "Scrap price in USD/LDT"},
+        marks: [
+            Plot.ruleY([0]),
+            Plot.lineY(data, {x: "pricePerLdt", y: "shipScrapValuePerShare", strokeWidth: 2, stroke: "black", tip: true})
+        ]
+    }))
+);
+```
+
+### Hele flåten
 
 ```js
 const prices = [ 300, 350, 400, 450, 500, 550, 600, 650, 700 ];
@@ -98,12 +134,7 @@ display(
         marks: [
             Plot.ruleY([0]),
             Plot.lineY(data, {x: "pricePerLdt", y: "fleetScrapValuePerShare", strokeWidth: 2, stroke: "black", tip: true}),
-            Plot.lineY(data, {x: "pricePerLdt", y: "shipScrapValuePerShare", strokeWidth: 2, stroke: "black", tip: true}),
         ]
     }))
 );
-
 ```
-
-</div>
-</div>
