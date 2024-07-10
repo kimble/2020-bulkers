@@ -9,7 +9,7 @@ export default {
   pages: [
     {
       name: "2020 Bulkers",
-      path: "/2020-bulkers",
+      path: "/2020-bulkers/",
       pages: [
         {name: "Scrubber - Kalkulator", path: "/2020-bulkers/scrubber-calculator"},
         {name: "Skrapverdi", path: "/2020-bulkers/scrap-value"},
