@@ -4,7 +4,7 @@ title: Utbyttekalkulator
 
 ```js
 const priceFormat = d3.format(",");
-const facts = await FileAttachment("data/facts.json").json();
+const facts = await FileAttachment("../data/2020-bulkers/facts.json").json();
 ```
 
 
@@ -55,7 +55,7 @@ Sum: ${operationalDaysTotal}
 ## Scrubber benefit
 
 Ta en titt på [nyhetssiden](https://2020bulkers.com/investor-relations/) for forrige måneds "commercial update" for en ide
-om hva slags premie de får for scrubbere for tiden. Alternativt teste [kalkulatoren](/scrubber-calculator).
+om hva slags premie de får for scrubbere for tiden. Alternativt teste [kalkulatoren](/docs/2020-bulkers/scrubber-calculator.md).
 
 ```js
 const scrubberSpreadPerDayUsd = view(Inputs.range([0, 5000], {step: 1, value: 2400, label: "Per day per ship (USD)"}));

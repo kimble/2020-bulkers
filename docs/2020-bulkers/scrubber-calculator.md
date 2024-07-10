@@ -4,7 +4,7 @@ title: Scrubber kalkulator
 
 ```js
 const priceFormat = d3.format(",");
-const facts = await FileAttachment("data/facts.json").json();
+const facts = await FileAttachment("../data/2020-bulkers/facts.json").json();
 ```
 
 # Scrubber kalkulator 

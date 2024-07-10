@@ -12,11 +12,11 @@ Prisen man får per tonn avhenger åpenbart av dagens stålpris og tilstanden ti
 svingt mellom 400 og [600](https://www.lloydslist.com/LL1144331/Eighth-capesize-bulker-sold-for-recycling) USD/LDT de siste årene. 
 
 ```js
-const facts = await FileAttachment("data/facts.json").json();
+const facts = await FileAttachment("../data/2020-bulkers/facts.json").json();
 ```
 
 ```js
-const nokusd = await FileAttachment("data/nok-vs-usd.csv").csv({ typed: true });
+const nokusd = await FileAttachment("../data/nok-vs-usd.csv").csv({ typed: true });
 const lastNokUsd = nokusd[nokusd.length-1];
 ```
 

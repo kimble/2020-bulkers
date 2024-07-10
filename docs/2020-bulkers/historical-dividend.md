@@ -7,7 +7,7 @@ title: Historisk utbytte
 Data hentes fra [divvydiary.com](https://divvydiary.com/en/2020-bulkers-stock-BMG9156K1018).
 
 ```js
-const nokusd = await FileAttachment("data/nok-vs-usd.csv").csv({typed: true});
+const nokusd = await FileAttachment("../data/nok-vs-usd.csv").csv({typed: true});
 const nokUsdByDate = nokusd.reduce((a, v) => ({...a, [v.date]: v.value}), {});
 
 const round = (n) => Math.round(n * 100) / 100;
@@ -32,7 +32,7 @@ const nokToUsdAtDate = (date) => {
 ```
 
 ```js
-const dividend = await FileAttachment("data/2020-dividend.csv").csv({ typed: true });
+const dividend = await FileAttachment("../data/2020-bulkers/2020-dividend.csv").csv({ typed: true });
 ```
 
 ```js

@@ -1,20 +1,23 @@
 // See https://observablehq.com/framework/config for documentation.
 export default {
   // The project’s title; used in the sidebar and webpage titles.
-  title: "2020 Bulkers",
+  title: "Aksjer og sånt",
 
   // The pages and sections in the sidebar. If you don’t specify this option,
   // all pages will be listed in alphabetical order. Listing pages explicitly
   // lets you organize them into sections and have unlisted pages.
-  // pages: [
-  //   {
-  //     name: "Examples",
-  //     pages: [
-  //       {name: "Dashboard", path: "/example-dashboard"},
-  //       {name: "Report", path: "/example-report"}
-  //     ]
-  //   }
-  // ],
+  pages: [
+    {
+      name: "2020 Bulkers",
+      path: "/2020-bulkers",
+      pages: [
+        {name: "Scrubber - Kalkulator", path: "/2020-bulkers/scrubber-calculator"},
+        {name: "Skrapverdi", path: "/2020-bulkers/scrap-value"},
+        {name: "Utbytte - Kalkulator", path: "/2020-bulkers/dividend-calculator"},
+        {name: "Utbytte - Historisk", path: "/2020-bulkers/historical-dividend"},
+      ]
+    }
+  ],
 
   // Some additional configuration options and their defaults:
   // theme: "default", // try "light", "dark", "slate", etc.
